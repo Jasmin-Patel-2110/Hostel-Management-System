@@ -45,5 +45,6 @@ def logout_view(request):
     logout(request)
     return redirect('login')  # Redirect to login page after logout
 
+@login_required
 def home(request):
     return render(request, 'users/index.html')

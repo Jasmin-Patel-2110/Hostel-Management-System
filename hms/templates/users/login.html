@@ -9,9 +9,9 @@
   </head>
   <body class="bg-gray-900 text-white">
     <div class="min-h-screen flex items-center justify-center">
-      <form method="POST" class="bg-gray-800 p-8 rounded-lg shadow-lg w-96">
+      <form method="POST" class="flex flex-col bg-gray-800 p-8 rounded-lg shadow-lg w-96">
         {% csrf_token %}
-        <h2 class="text-xl font-semibold text-center mb-4">Login</h2>
+        <h2 class="text-xl font-bold text-center mb-4">Login</h2>
         {% for field in form %}
         <div class="mb-4">
           <label
@@ -34,7 +34,7 @@
                 "px-4",
                 "py-2",
                 "focus:outline-none",
-                "focus:ring-green-500"
+                "focus:ring-green-500",
               );
           </script>
           {% if field.errors %}
@@ -48,6 +48,7 @@
         >
           Log In
         </button>
+        <p class = "block mt-3">New here? <a href="{% url "register" %}" class = "text-blue-500 ">click here</a></p>
       </form>
     </div>
   </body>

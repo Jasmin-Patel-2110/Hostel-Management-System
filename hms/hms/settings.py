@@ -142,3 +142,6 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static/')]
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 NPM_BIN_PATH = "C://Program Files//nodejs//npm.cmd"
+
+LOGIN_URL = '/users/login'
+LOGIN_REDIRECT_URL = 'users/index'  # or another path for after login
