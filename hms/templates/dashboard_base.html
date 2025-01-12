@@ -13,22 +13,16 @@
     <nav class="flex-grow">
       <ul class="space-y-2 p-4">
         <li>
-          <a href="/profile" class="block p-2 rounded bg-blue-700">Profile</a>
+          <a href="/" class="block p-2 rounded bg-blue-700">Profile</a>
         </li>
         <li>
-          <a href="/complaints" class="block p-2 rounded hover:bg-blue-500"
-            >Complaints</a
-          >
+          <a href="/" class="block p-2 rounded hover:bg-blue-500">Complaints</a>
         </li>
         <li>
-          <a href="/settings" class="block p-2 rounded hover:bg-blue-500"
-            >Settings</a
-          >
+          <a href="/" class="block p-2 rounded hover:bg-blue-500">Settings</a>
         </li>
         <li>
-          <a href="/logout" class="block p-2 rounded hover:bg-blue-500"
-            >Logout</a
-          >
+          <a href="{% url "logout_confirmation" %}" class="block p-2 rounded hover:bg-blue-500">Logout</a>
         </li>
       </ul>
     </nav>

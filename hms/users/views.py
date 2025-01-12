@@ -41,6 +41,7 @@ def login_view(request):
         form = AuthenticationForm()
     return render(request, 'users/login.html', {'form': form})
 
-def logout_view(request):
-    logout(request)
-    return redirect('login')  # Redirect to login page after logout
+# @login_required
+# def logout_view(request):
+#     logout(request)
+#     return redirect('login')  # Redirect to login page after logout

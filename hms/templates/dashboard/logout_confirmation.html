@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+<!-- title-->
+{% block title %} Logout {% endblock %}
+
+<!-- content -->
+{% block content %}
+<div class="bg-white p-6 rounded-lg shadow-md">
+  <h2 class="text-xl font-bold mb-4">Are you sure you want to logout?</h2>
+  <form method="POST">
+    {% csrf_token %}
+    <button type="submit" class="bg-red-500 text-white px-4 py-2 rounded">
+      Yes, Logout
+    </button>
+    <a href="{% url "profile" %}" class="ml-4 text-blue-500">Cancel</a>
+  </form>
+</div>
+
+{% endblock %}
