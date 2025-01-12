@@ -17,7 +17,7 @@ def register(request):
         if form.is_valid():
             user = form.save()
             login(request, user)
-            return redirect('index')  # Change 'index' to your main page URL name
+            return redirect('profile')  # "profile" main page URL name
     else:
         form = UserCreationForm()
     return render(request, 'users/register.html', {'form': form})
@@ -36,7 +36,7 @@ def login_view(request):
         if form.is_valid():
             user = form.get_user()
             login(request, user)
-            return redirect('index')  # Change 'index' to your main page URL name
+            return redirect('profile')  # Change 'index' to your main page URL name
     else:
         form = AuthenticationForm()
     return render(request, 'users/login.html', {'form': form})
@@ -44,7 +44,3 @@ def login_view(request):
 def logout_view(request):
     logout(request)
     return redirect('login')  # Redirect to login page after logout
-
-@login_required
-def home(request):
-    return render(request, 'users/index.html')
