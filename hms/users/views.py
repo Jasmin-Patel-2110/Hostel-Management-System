@@ -3,6 +3,8 @@ from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth import login, logout, authenticate
 from django.contrib.auth.decorators import login_required
 
+from users.forms import OnboardingForm
+
 def register(request):
     """
     This view handles the registration of a new user. If the request is a GET
@@ -45,3 +47,17 @@ def login_view(request):
 # def logout_view(request):
 #     logout(request)
 #     return redirect('login')  # Redirect to login page after logout
+
+@login_required
+def onboarding_view(request):
+    if request.method == 'POST':
+        form = OnboardingForm(request.POST)
+        if form.is_valid():
+            # Save the form data to the database
+            form.save()
+            # Redirect to the dashboard or any other page
+            return redirect('profile')
+    else:
+        form = OnboardingForm()
+
+    return render(request, 'users/onboarding.html', {'form': form})
