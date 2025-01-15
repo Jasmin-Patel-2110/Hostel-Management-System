@@ -5,17 +5,11 @@ from django.contrib.auth import logout
 
 @login_required
 def profile(request):
-    user_name = User.get_username(request.user)
-    full_name = User.get_full_name(request.user)
-    
-    # context = {
-    #     user_name: user_name,
-    #     full_name: full_name
-    # }
    
     context = {
-        "userName": user_name,
-        "fullName": full_name
+        "userName": User.get_username(request.user),
+        "fullName": User.get_full_name(request.user),
+        "emailId": request.user.email,
     }
     return render(request, 'dashboard/profile.html',context=context)
 
