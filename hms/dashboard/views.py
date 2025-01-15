@@ -25,3 +25,9 @@ def logout_confirmation(request):
         logout(request)
         return redirect('login')  # Redirect to login page
     return render(request, 'dashboard/logout_confirmation.html')
+
+def complains(request):
+    return render(request,'dashboard/complains.html')
+
+def payments(request):
+    return render(request,'dashboard/payments.html')

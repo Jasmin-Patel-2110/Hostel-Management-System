@@ -14,15 +14,15 @@
       <nav class="h-full flex flex-col justify-between">
         <ul class="space-y-2 p-4">
           <li>
-            <a href="/" class="block p-2 rounded bg-blue-700">Profile</a>
+            <a href="{% url "profile" %}" class="block p-2 rounded hover:bg-blue-500">Profile</a>
           </li>
           <li>
-            <a href="/" class="block p-2 rounded hover:bg-blue-500"
+            <a href="{% url "complains" %}" class="block p-2 rounded hover:bg-blue-500"
               >Complaints</a
             >
           </li>
           <li>
-            <a href="/" class="block p-2 rounded hover:bg-blue-500">Payments</a>
+            <a href="{% url "payments" %}" class="block p-2 rounded hover:bg-blue-500">Payments</a>
           </li>
         </ul>
 
