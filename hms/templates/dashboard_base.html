@@ -34,13 +34,15 @@
               >Onboarding</a
             >
           </li>
-          <li>
-            <a
-              href="/admin" target = "_blank"
-              class="block p-2 rounded-md border border-blue-500 hover:bg-blue-500"
-              >Admin panel</a
-            >
-          </li>
+          {% if isSuperuser %} 
+            <li>
+              <a
+                href="/admin" target = "_blank"
+                class="block p-2 rounded-md border border-blue-500 hover:bg-blue-500"
+                >Admin panel</a
+              >
+            </li>
+          {% endif %}
           <li>
             <a
               href="{% url 'logout_confirmation' %}"

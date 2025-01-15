@@ -1,17 +1,23 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import get_object_or_404, render, redirect
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from django.contrib.auth import logout
 
+from users.models import Student
+
+
 @login_required
 def profile(request):
    
-    context = {
-        "userName": User.get_username(request.user),
-        "fullName": User.get_full_name(request.user),
-        "emailId": request.user.email,
-    }
-    return render(request, 'dashboard/profile.html',context=context)
+    student = get_object_or_404(Student, enrollment_number=request.user.username)  # Assuming username is enrollment number
+    isSuperuser = request.user.is_superuser
+    
+    # context = {
+    #     "userName": User.get_username(request.user),
+    #     "fullName": User.get_full_name(request.user),
+    #     "emailId": request.user.email,
+    # }
+    return render(request, 'dashboard/profile.html',context={"student": student, "isSuperuser":isSuperuser})
 
 @login_required
 def logout_confirmation(request):

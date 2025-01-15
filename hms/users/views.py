@@ -19,7 +19,7 @@ def register(request):
         if form.is_valid():
             user = form.save()
             login(request, user)
-            return redirect('profile')  # "profile" main page URL name
+            return redirect('onboarding')  # "profile" main page URL name
     else:
         form = UserCreationForm()
     return render(request, 'users/register.html', {'form': form})

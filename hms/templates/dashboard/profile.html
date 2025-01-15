@@ -18,44 +18,50 @@
         alt="Profile Picture"
       />
       <div>
-        <h3 class="text-xl font-bold">{{userName}}</h3>
-        <p class="text-blue-200">Enrollment No: 12345678</p>
+        <h3 class="text-xl font-bold">{{student.name}}</h3>
+        <p class="text-blue-200">
+          Enrollment No: {{student.enrollment_number}}
+        </p>
       </div>
     </div>
 
     <!-- Profile Details -->
     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
       <div>
-        <p class="text-blue-200">Full Name:</p>
-        <p class="text-slate-100 font-semibold">{{fullName}}</p>
+        <p class="text-blue-200">Email Address:</p>
+        <p class="text-slate-100 font-medium">{{student.email}}</p>
       </div>
       <div>
         <p class="text-blue-200">Gender:</p>
-        <p class="text-slate-100 font-semibold">Male</p>
+        <p class="text-slate-100 font-medium">{{student.get_gender_display}}</p>
       </div>
       <div>
         <p class="text-blue-200">Branch:</p>
-        <p class="text-slate-100 font-semibold">Computer Science</p>
+        <p class="text-slate-100 font-medium">{{student.get_branch_display}}</p>
       </div>
       <div>
         <p class="text-blue-200">Semester:</p>
-        <p class="text-slate-100 font-semibold">5th</p>
+        <p class="text-slate-100 font-medium">
+          {{student.get_semester_display }}
+        </p>
       </div>
       <div>
         <p class="text-blue-200">Contact Number:</p>
-        <p class="text-slate-100 font-semibold">123-456-7890</p>
+        <p class="text-slate-100 font-medium tracking-wide">
+          {{student.contact_number}}
+        </p>
       </div>
       <div>
         <p class="text-blue-200">Parent's Contact:</p>
-        <p class="text-slate-100 font-semibold">098-765-4321</p>
-      </div>
-      <div>
-        <p class="text-blue-200">Email Address:</p>
-        <p class="text-slate-100 font-semibold">{{emailId}}</p>
+        <p class="text-slate-100 font-medium tracking-wide">
+          {{student.parent_contact_number}}
+        </p>
       </div>
       <div>
         <p class="text-blue-200">Hostel Status:</p>
-        <p class="text-slate-100 font-semibold">OLD</p>
+        <p class="text-slate-100 font-medium">
+          {{student.get_status_display }}
+        </p>
       </div>
     </div>
   </div>
